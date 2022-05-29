@@ -1,0 +1,36 @@
+/* List view  */
+.widget-listview {
+    list-style-type: none;
+    padding: 0;
+}
+.widget-listview li {
+    margin: 5px 3px 3px 3px;
+    padding: 15px 15px 15px 3px;
+    background: whitesmoke;
+    border-radius: 3px;
+    vertical-align: top;
+    display: flex;
+}
+
+.widget-listview li img {
+    width: 130px;
+    margin-right: 5px;
+    display: inline-block;
+    background: white;
+    padding: 5px;
+    border-radius: 3px;
+    vertical-align: top;
+    flex: 33.33%;
+}
+
+.widget-listview li div {
+    display: inline-block;;
+    flex: 66.66%;
+}
+
+
+.widget-listview .wg-header {
+    font-weight: bold;
+    font-size: 15px;
+}
+/* End List view  */

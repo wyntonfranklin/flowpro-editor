@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlowPro - Help</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="padding: 10px">
+<h3>Help</h3>
+<p>To view help documents click the link below <br>
+    <a id="gotolink" href="#">https://flowprodocs.wftutorials.com</a></p>
+
+</body>
+
+<script>
+    const open = require('open');
+
+    let helpUrl = "https://flowprodocs.wftutorials.com";
+
+    document.getElementById("gotolink").addEventListener('click', function(e){
+        open(helpUrl);
+    });
+</script>
+</html>

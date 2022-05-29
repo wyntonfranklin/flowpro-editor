@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Primary Meta Tags -->
+    <title>FlowPro - Settings</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <link href='../styles.css' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="../css/notifications.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/notifications.js"></script>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    .split {
+        height: 100%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        overflow-x: hidden;
+        padding-top: 0px;
+    }
+
+    /* Control the left side */
+    .left {
+        left: 0;
+        background-color: #C9C9D5;
+        width: 25%;
+    }
+
+    /* Control the right side */
+    .right {
+        right: 0;
+        background-color: white;
+        width: 75%;
+        padding-left: 5px;
+        padding-top: 5px;
+    }
+
+    .right h3 {
+        padding: 0;
+        margin: 0;
+    }
+    .right p {
+        padding: 0px 0px 5px 0px;
+        margin: 0;
+    }
+    .left-panel-items {
+        list-style: none;
+        padding:0;
+        margin: 0;
+    }
+    .left-panel-items li {
+        padding: 5px;
+        background: whitesmoke;
+        border-radius: 3px;
+        border-bottom: 1px solid #c6c6c6;
+        cursor: pointer;
+        margin-bottom: 3px;
+    }
+    .left-panel-items li:hover {
+        background: #217CE8;
+    }
+    .active {
+        background: #217CE8!important;
+        color:white!important;
+    }
+    .buttons-bar {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        height: 35px;
+        background: #393C44;
+        z-index: 100;
+    }
+
+    .simple-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .simple-list-item {
+        padding: 5px;
+        margin-bottom: 3px;
+        cursor: pointer;
+        border-bottom: 1px solid #c6c6c6;
+    }
+    .simple-list-item:hover {
+        background: #f6f6f6;
+    }
+    .settings-input {
+        width: 95%;
+        margin-bottom: 3px;
+    }
+</style>
+<body id="">
+
+<div class="split left">
+    <div class="centered">
+        <ul class="left-panel-items noselect">
+            <li class="lp-item noselect active" data-id="gen-settings">General</li>
+            <li class="lp-item noselect" data-id="env-settings">Env Variables</li>
+        </ul>
+    </div>
+</div>
+
+<div class="split right noselect">
+    <div class="centered">
+        <div id="gen-settings">
+            <h3>General Settings</h3>
+            <p>Change how the application function with these settings</p>
+            <p>Build Version: <select id="build-version"><option>v1</option></select></p>
+            <hr>
+            Repeat Delay: <input id="rpd" type="number" min="200" max="99999"/> (in ms)
+            <hr>
+            Canvas Size:  <select id="canvassize">
+            <option value="1024">1</option>
+            <option value="2024">2</option>
+            <option value="3024">3</option>
+            <option value="4024">4</option>
+            <option value="5024">5</option>
+            <option value="6024">6</option>
+            <option value="7024">7</option>
+        </select>
+        </div>
+        <div id="env-settings" style="display: none; padding-bottom: 45px;">
+            <h3>Environment Variables</h3>
+            <p>You can add and remove environment variables here.
+                These variables are applied to the world at the before the script runs.</p>
+            <div style="padding: 5px; background: #C9C9D5; border-radius: 3px; margin-left: 3px; width: 98%;">
+                Variable Name: (Start with <b>ENV_</b>) &nbsp;<br> <input class="settings-input" id="env-var" type="text"/> <br>
+                Description: &nbsp; <br><input class="settings-input" id="env-desc" type="text"/> <br>
+                Value: &nbsp; <br><input class="settings-input" id="env-content" type="text"/><br>
+                <button id="save-env-var" class="btn btn-success">Save variable</button>
+            </div>
+            <p style="margin-top: 5px;"><i>Click to copy variable</i></p>
+            <ul id="env-list" class="simple-list">
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="buttons-bar">
+    <div style="float: right; margin-top: 5px; margin-right: 5px;">
+        <button id="ok-settings-btn">Ok</button>
+        <button id="cancel-settings-btn">Cancel</button>
+        <button id="apply-settings-btn">Apply</button>
+    </div>
+</div>
+
+
+<script src="../renderscripts/settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlowPro - Export Package</title>
+    <link href='../styles.css' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    .ex-file {
+        padding: 5px;
+        background-color: #fff;
+        border-radius: 3px;
+        margin-bottom: 3px;
+        display: inline-block;
+        cursor: pointer;
+        font-weight: bold;
+    }
+</style>
+<body style="padding: 0px; margin: 0px;">
+
+<div style="padding: 5px;">
+    <p>Add Files to Package: &nbsp; <button id="add-file">Select File</button></p>
+    <p>Package To: &nbsp; <input id="package-to" type="text" readonly="readonly" size="30"/>&nbsp; <button id="select-folder">Select Path</button></p>
+    <p>Package Name: &nbsp; <input id="folder-name" type="text"/></p>
+    <hr>
+    <span>&#43;Files Listed for export</span>
+    <span id="remove-files" style="float: right; cursor: pointer">&#215;Remove added files</span><br>
+    <div id="package-listing" style="height: 300px; padding: 5px; background: #f6f6f6;">
+
+    </div>
+
+
+</div>
+
+<div style="position:fixed; bottom:0;    background: #393C44; width: 100%; height: 35px;">
+
+    <div style="float: right; margin-top: 5px; margin-right: 5px;">
+        <button id="export-cancel">Cancel</button>
+        <button id="export-project">Export</button>
+    </div>
+</div>
+<script src="../renderscripts/export.js"></script>
+</body>
+</html>

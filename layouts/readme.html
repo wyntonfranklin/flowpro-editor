@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlowPro - Readme</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+</style>
+<body style="padding: 10px">
+<h3>README</h3>
+<div id="app">
+
+</div>
+
+</body>
+<script>
+    const { ipcRenderer} = require('electron');
+    const markdown = require( "markdown" ).markdown;
+    let appEl = document.getElementById("app");
+    appEl.innerHTML = "";
+
+    ipcRenderer.on('message', function (evt, results) {
+        let showType = results.type;
+        if(showType == "text"){
+            appEl.innerText = results.body;
+        }else if(showType == "html"){
+            appEl.innerHTML = results.body;
+        }else if(showType == "markdown"){
+            appEl.innerHTML = markdown.toHTML(results.body);
+        }else{
+            appEl.innerHTML = results.body;
+        }
+    });
+
+</script>
+</html>

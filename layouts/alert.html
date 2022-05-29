@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flowpro - Alert Dialog</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="padding: 20px; text-align: center;">
+        <div id="app"  class="" style="margin-bottom: 10px; font-size: 20px;">
+
+        </div>
+        <a href="#" class="btn btn-primary btn-block" id="button-action">Do something</a>
+</body>
+<script>
+    const { ipcRenderer,clipboard } = require('electron')
+    let btn =  document.getElementById('button-action');
+    let results = null;
+    let action = null;
+
+    function onButtonClicked(){
+
+    }
+
+    btn.addEventListener('click', function(e){
+        ipcRenderer.invoke('alert-handler',action, results);
+    })
+
+    let btnClick = function(e){
+
+    }
+    ipcRenderer.on('data', function (evt, options) {
+        results = options;
+        document.getElementById('app').innerHTML = options.message;
+        document.title  =  "Flowpro - " + results.message;
+        action = results.action;
+        btn.innerText = results.button;
+
+    });
+
+</script>
+</html>

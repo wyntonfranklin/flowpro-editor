@@ -20,7 +20,7 @@
     "interactjs": "^1.10.11",
     "json-as-xlsx": "^2.3.10",
     "markdown": "^0.5.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "mssql": "^7.3.0",
     "mv": "^2.1.1",
     "mysql": "^2.18.1",

@@ -33,7 +33,7 @@
     "read-excel-file": "^5.2.25",
     "sound-play": "^1.1.0",
     "sqlite": "^4.0.23",
-    "sqlite3": "^5.0.2",
+    "sqlite3": "^5.1.5",
     "ssh2-sftp-client": "^7.2.2"
   },
   "build": {
